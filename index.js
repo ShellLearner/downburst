@@ -15,14 +15,15 @@ client.on("message", async (message) => {
 	//messages not containing the prefix ignored
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
+	//splits the commands from the argument
 	const args = message.content.slice(prefix.length).trim().split(/\ +/g);
 	const command = args.shift().toLowerCase();
 
-	if (command === ping) {
-		console.log("Pong! I'm alive, don't worry. Yet.")
+	if (command === "ping") {
+		message.channel.send("Pong! I'm alive, don't worry. Yet.")
 	}
 
-	if (command === whoami){
+	if (command === "whoami"){
 		message.channel.send(`Hmm. Let me check.`);
 		message.channel.startTyping();
 		await sleep(2000)
