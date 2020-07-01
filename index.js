@@ -8,10 +8,14 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) {return};
-	//prevents bots calling each other + messages not containing the prefix ignored
 	
- 	if 
+	//prevents bots calling each other and
+	//messages not containing the prefix ignored
+	if (!message.content.startsWith(prefix) || message.author.bot) {
+		console.log ("ignored message");
+		return
+	};
+	
 });
 
 client.login(config.token);
