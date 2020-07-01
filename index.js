@@ -19,6 +19,15 @@ client.on("message", message => {
 	if (command === ping) {
 		console.log("Pong! I'm alive, don't worry. Yet.")
 	}
+
+	if (command === whoami){
+		message.channel.send(`Hmm. Let me check.`);
+		message.channel.startTyping();
+		wait(5s);
+		message.channel.send(`It appears you're ${message.author.username}.`);
+		message.channel.stopTyping();
+		
+	}
 });
 
 client.login(config.token);
