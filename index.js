@@ -2,12 +2,14 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 const prefix = config.prefix
+const sleep = require("./sleep.js")
+
 
 client.on("ready", () => {
 	console.log("Bot is online!");
 });
 
-client.on("message", message => {
+client.on("message", async (message) => {
 
 	//prevents bots calling each other and
 	//messages not containing the prefix ignored
@@ -23,10 +25,10 @@ client.on("message", message => {
 	if (command === whoami){
 		message.channel.send(`Hmm. Let me check.`);
 		message.channel.startTyping();
-		wait(5s);
+		await sleep(2000)
 		message.channel.send(`It appears you're ${message.author.username}.`);
 		message.channel.stopTyping();
-		
+
 	}
 });
 
