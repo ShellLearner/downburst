@@ -25,10 +25,10 @@ client.on("message", async (message) => {
 
 	if (command === "whoami"){
 		message.channel.send(`Hmm. Let me check.`);
-		message.channel.startTyping();
+		message.channel.startTyping(2);
 		await sleep(2000)
+		message.channel.stopTyping(true);
 		message.channel.send(`It appears you're ${message.author.username}.`);
-		message.channel.stopTyping();
 
 	}
 });
