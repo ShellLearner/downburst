@@ -26,9 +26,15 @@ client.on("message", async (message) => {
 	if (command === "whoami"){
 		message.channel.send(`Hmm. Let me check.`);
 		message.channel.startTyping(2);
+<<<<<<< HEAD
 		await sleep(2000)
 		message.channel.stopTyping(true);
 		message.channel.send(`It appears you're ${message.author.username}.`);
+=======
+		await sleep(5000)
+		message.channel.send(`It appears you're ${message.author.username}.`);
+		message.channel.stopTyping(true);
+>>>>>>> 879ba18d5127785abee4e2119dc1d26b553142e0
 
 	}
 });
