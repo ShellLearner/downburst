@@ -1,2 +1,4 @@
 #ignores the config file
 config.json
+#plus node_modules: no need for shifting large amounts of code
+node_modules
